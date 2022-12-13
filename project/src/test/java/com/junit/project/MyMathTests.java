@@ -3,7 +3,10 @@ package com.junit.project;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class MyMathTests {
@@ -26,5 +29,14 @@ public class MyMathTests {
         //int expectedResult = 22;
         int expectedResult = 21;
         assertEquals(expectedResult, result);
+    }
+    List<String> testings = Arrays.asList("Jnit Testing", "Integration Testing", "JUnit Mockito");
+    @Test
+    void Test3(){
+                Boolean testing = testings.contains("Jnit Testing");
+        assertEquals(true, testing);
+        assertTrue(testing);
+        assertEquals(3,testings.size());
+        assertArrayEquals(new int[] {4,5,6}, new int[] {4,5,6});
     }
 }
